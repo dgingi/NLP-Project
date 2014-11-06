@@ -5,10 +5,9 @@ from pymongo import Connection
 class AutoCompModule:
 
     def __init__(self,DBName):
-        db = Connection()[DBName]
-        self.dict = db['dict']
-        self.dictBy2 = MongoClient().DBName.dictBy2
-        self.dictBy3 = MongoClient().DBName.dictBy3
+        self.dict = Connection()[DBName]['dict']
+        self.dictBy2 = Connection()[DBName]['dictBy2']
+        self.dictBy3 = Connection()[DBName]['dictBy3']
     
     def learnSingle(self,fileName):
         input = open(fileName, encoding='utf-8')
